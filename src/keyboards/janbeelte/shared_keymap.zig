@@ -39,17 +39,17 @@ pub const keymap = [_][key_count]core.KeyDef{
     },
     // L_ARROWS
     .{
-   T(us.EXLM),    T(us.LABK),    GUI(us.EQL),          T(us.RABK), T(us.PERC),             T(us.SLSH),  T(us.HOME),   AF(us.UP),    T(us.END),  T(us.APP),
-    T(us.AT), ALT(us.LCBR), CTL(us.LPRN),   SFT(us.RPRN), T(us.RCBR),             T(us.PGUP), AF(us.LEFT), AF(us.DOWN), AF(us.RIGHT), T(us.PGDN),
-                  T(us.HASH),   T(us.LBRC),  T(us.RBRC),    _______,                _______,   T(us.TAB),  CTL(us.DQUO),      T(us.ESC),
-                                                        LT(L_LEFT, us.SPACE),                _______
+   T(us.TAB),    T(us.LBRC),    GUI(us.RBRC),          T(us.LCBR), T(us.RCBR),             T(us.EXLM),  T(us.HOME),   AF(us.UP),    T(us.END),  T(us.COLON),
+    T(us.BACKSPACE), ALT(us.LPRN), CTL(us.RPRN),   SFT(us.LABK), T(us.RABK),             T(us.PGUP), AF(us.LEFT), AF(us.DOWN), AF(us.RIGHT), T(us.PGDN),
+                  T(us.GRAVE),   T(us.TILD),  T(us.BACKSLASH),    T(us.PIPE),                T(us.SLASH),  CTL(us.QUES), T(us.QUOT), T(us.DQUO),
+                                        LT(L_LEFT, us.SPACE),                _______
     },
     // L_NUM
     .{
-       _______,  _______,    T(us.LBRC),  T(us.RBRC), _______,                  _______,   T(us.N7),  T(us.N8),  T(us.N9),    _______,
-       _______,     UNDO,          REDO, T(us.SPACE), _______,                _______, SFT(us.N4),CTL(us.N5),ALT(us.N6), _______,
-               T(us.ESC), T(_Ctl(us.C)),   T(us.DEL), _______,              PrintStats,   T(us.N1),  T(us.N2),  T(us.N3),
-                                          LT(L_LEFT, us.SPACE),             LT(L_RIGHT, us.N0)
+       T(us.HASH),  T(us.DLR),    T(us.PERC),  T(us.CART), T(us.AMPR),                  T(us.MINUS),   T(us.N7),  T(us.N8),  T(us.N9),    T(us.PLUS),
+       T(us.AT),     UNDO,          REDO, T(us.SPACE), T(us.ASTER),                T(us.UNDERLINE), SFT(us.N4),CTL(us.N5),ALT(us.N6), T(us.EQUAL),
+               T(us.ESC), T(_Ctl(us.C)),   T(us.DEL), T(_Ctl(us.V)),              T(de.EUR),   T(us.N1),  T(us.N2),  T(us.N3),
+                                        LT(L_LEFT, us.SPACE),             LT(L_RIGHT, us.N0)
     },
     // L_EMPTY
     .{
@@ -61,9 +61,9 @@ pub const keymap = [_][key_count]core.KeyDef{
     },
     // BOTH
     .{
-    PrintStats,   T(us.F7),   T(us.F8),   T(us.F9), T(us.F10),            T(us.TILD), T(us.SPACE), T(us.SPACE), T(us.SPACE), T(us.GRV),
-    _______, ALT(us.F4), CTL(us.F5), SFT(us.F6), T(us.F11),             T(us.DLR),  SFT(us.BS),  CTL(us.BS),  ALT(us.BS),   _______,
-               T(us.F1),   T(us.F2),   T(us.F3), T(us.F12),            T(us.CART),   T(us.DEL),   T(us.DEL),   T(us.DEL),
+    PrintStats,   T(us.F7),   T(us.F8),   T(us.F9), T(us.F10),            T(de.SRPS), T(us.SPACE), T(us.SPACE), T(us.SPACE), T(de.OE),
+    T(us.ESC), ALT(us.F4), CTL(us.F5), SFT(us.F6), T(us.F11),             T(de.AE),  SFT(us.BS),  CTL(us.BS),  ALT(us.BS),   T(us.ESC),
+               T(us.F1),   T(us.F2),   T(us.F3), T(us.F12),            T(us.CART),   T(de.UE),   T(us.DEL),   T(us.DEL),
                                                    _______,              T(us.N0)
     },
     .{
