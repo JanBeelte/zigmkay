@@ -1,5 +1,6 @@
 // These keycodes are copied from the qmk project under the gpl2 license
 const core = @import("../zigmkay/zigmkay.zig").core;
+
 pub const KC_BOOT = 0x0001;
 pub const KC_PRINT_STATS = 0x0002;
 pub const KC_A = 0x0004;
@@ -171,7 +172,25 @@ pub const NONUS_HASH = core.KeyCodeFire{ .tap_keycode = KC_NONUS_HASH };
 pub const SEMICOLON = core.KeyCodeFire{ .tap_keycode = KC_SEMICOLON };
 pub const QUOTE = core.KeyCodeFire{ .tap_keycode = KC_QUOTE };
 pub const GRAVE = core.KeyCodeFire{ .tap_keycode = KC_GRAVE };
+pub const EXLM = core.KeyCodeFire{ .tap_keycode = KC_1, .tap_modifiers = .{ .left_shift = true } };
+pub const LABK = core.KeyCodeFire{ .tap_keycode = KC_COMMA, .tap_modifiers = .{ .left_shift = true } };
+pub const RABK = core.KeyCodeFire{ .tap_keycode = KC_DOT, .tap_modifiers = .{ .left_shift = true } };
+pub const PERC = core.KeyCodeFire{ .tap_keycode = KC_5, .tap_modifiers = .{ .left_shift = true } };
+pub const AT = core.KeyCodeFire{ .tap_keycode = KC_2, .tap_modifiers = .{ .left_shift = true } };
+pub const LCBR = core.KeyCodeFire{ .tap_keycode = KC_LEFT_BRACKET, .tap_modifiers = .{ .left_shift = true } };
+pub const RCBR = core.KeyCodeFire{ .tap_keycode = KC_RIGHT_BRACKET, .tap_modifiers = .{ .left_shift = true } };
+pub const LPRN = core.KeyCodeFire{ .tap_keycode = KC_9, .tap_modifiers = .{ .left_shift = true } };
+pub const RPRN = core.KeyCodeFire{ .tap_keycode = KC_0, .tap_modifiers = .{ .left_shift = true } };
+pub const HASH = core.KeyCodeFire{ .tap_keycode = KC_3, .tap_modifiers = .{ .left_shift = true } };
+pub const PIPE = core.KeyCodeFire{ .tap_keycode = KC_BACKSLASH, .tap_modifiers = .{ .left_shift = true } };
+pub const DQUO = core.KeyCodeFire{ .tap_keycode = KC_QUOTE, .tap_modifiers = .{ .left_shift = true } };
+pub const TILD = core.KeyCodeFire{ .tap_keycode = KC_GRAVE, .tap_modifiers = .{ .left_shift = true } };
+pub const DLR = core.KeyCodeFire{ .tap_keycode = KC_4, .tap_modifiers = .{ .left_shift = true } };
+pub const CART = core.KeyCodeFire{ .tap_keycode = KC_6, .tap_modifiers = .{ .left_shift = true } };
+pub const AMPR = core.KeyCodeFire{ .tap_keycode = KC_7, .tap_modifiers = .{ .left_shift = true } };
 pub const COMMA = core.KeyCodeFire{ .tap_keycode = KC_COMMA };
+pub const QUES = core.KeyCodeFire{ .tap_keycode = KC_SLASH, .tap_modifiers = .{ .left_shift = true } };
+pub const PLUS = core.KeyCodeFire{ .tap_keycode = KC_EQUAL, .tap_modifiers = .{ .left_shift = true } };
 pub const DOT = core.KeyCodeFire{ .tap_keycode = KC_DOT };
 pub const SLASH = core.KeyCodeFire{ .tap_keycode = KC_SLASH };
 pub const CAPS_LOCK = core.KeyCodeFire{ .tap_keycode = KC_CAPS_LOCK };

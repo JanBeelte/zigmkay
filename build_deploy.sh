@@ -5,7 +5,7 @@ set -e  # Exit on any error
 echo "Building firmware..."
 zig build
 
-MOUNT_POINT="/run/media/stephan/RPI-RP2"
+MOUNT_POINT="/Volumes/RPI-RP2"
 FIRMWARE="zig-out/firmware/zigmkay.uf2"
 TARGET="$MOUNT_POINT/zigmkay.uf2"
 
