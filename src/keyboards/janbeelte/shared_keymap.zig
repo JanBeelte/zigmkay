@@ -39,9 +39,9 @@ pub const keymap = [_][key_count]core.KeyDef{
     },
     // L_ARROWS
     .{
-   T(us.TAB),    T(us.LBRC),    CTL(us.RBRC),          T(us.LCBR), T(us.RCBR),             T(us.EXLM),  T(us.HOME),   AF(us.UP),    T(us.END),  T(us.COLON),
+   T(us.TAB),    T(us.LBRC),    CTL(us.RBRC),          T(us.LCBR), T(us.RCBR),             T(us.GRAVE),  T(us.HOME),   AF(us.UP),    T(us.END),  T(us.COLON),
     CTL(us.BACKSPACE), ALT(us.LPRN), GUI(us.RPRN),   SFT(us.LABK), T(us.RABK),             T(us.PGUP), AF(us.LEFT), AF(us.DOWN), AF(us.RIGHT), T(us.PGDN),
-                  T(us.GRAVE),   T(us.TILD),  T(us.BACKSLASH),    T(us.PIPE),                T(us.SLASH),  CTL(us.QUES), T(us.QUOT), T(us.DQUO),
+                  T(us.EXLM),   T(us.TILD),  T(us.BACKSLASH),    T(us.PIPE),                T(us.QUES),  CTL(us.SLASH), T(us.QUOT), T(us.DQUO),
                                         LT(L_LEFT, us.SPACE),                _______
     },
     // L_NUM
