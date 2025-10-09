@@ -79,7 +79,7 @@ const LEFT_THUMB = 1;
 const RIGHT_THUMB = 2;
 
 const UNDO = T(_Gui(us.Z));
-const REDO = T(_Gui(us.Y));
+const REDO = T(.{.tap_keycode = us.KC_Z, .tap_modifiers = .{ .left_shift = true, .left_gui = true } });
 
 fn _Ctl(fire: core.KeyCodeFire) core.KeyCodeFire {
     var copy = fire;
