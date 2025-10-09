@@ -32,23 +32,23 @@ const A_EAT = core.KeyDef{ .tap_hold = .{
 
 pub const keymap = [_][key_count]core.KeyDef{
     .{
-         T(us.Q),  AF(us.W), GUI(us.F),   T(us.P), T(us.B),                  T(us.J),   T(us.L),  GUI(us.U),       T(us.Y), T(us.SEMICOLON),
-         A_EAT, ALT(us.R), CTL(us.S),         SFT(us.T), T(us.G),                  T(us.M), SFT(us.N),   CTL(us.E),     ALT(us.I),    T(us.O),
+         T(us.Q),  AF(us.W), CTL(us.F),   T(us.P), T(us.B),                  T(us.J),   T(us.L),  CTL(us.U),       T(us.Y), T(us.SEMICOLON),
+         A_EAT, ALT(us.R), GUI(us.S),         SFT(us.T), T(us.G),                  T(us.M), SFT(us.N),   GUI(us.E),     ALT(us.I),    CTL(us.O),
                     T(us.X),   T(us.C),         T(us.D), T(us.V),                  T(us.K),  T(us.H), T(us.COMMA), LT(L_WIN, us.DOT),
                                              LT(L_LEFT, us.SPACE),                  LT(L_RIGHT, us.ENTER)
     },
     // L_ARROWS
     .{
-   T(us.TAB),    T(us.LBRC),    GUI(us.RBRC),          T(us.LCBR), T(us.RCBR),             T(us.EXLM),  T(us.HOME),   AF(us.UP),    T(us.END),  T(us.COLON),
-    T(us.BACKSPACE), ALT(us.LPRN), CTL(us.RPRN),   SFT(us.LABK), T(us.RABK),             T(us.PGUP), AF(us.LEFT), AF(us.DOWN), AF(us.RIGHT), T(us.PGDN),
+   T(us.TAB),    T(us.LBRC),    CTL(us.RBRC),          T(us.LCBR), T(us.RCBR),             T(us.EXLM),  T(us.HOME),   AF(us.UP),    T(us.END),  T(us.COLON),
+    CTL(us.BACKSPACE), ALT(us.LPRN), GUI(us.RPRN),   SFT(us.LABK), T(us.RABK),             T(us.PGUP), AF(us.LEFT), AF(us.DOWN), AF(us.RIGHT), T(us.PGDN),
                   T(us.GRAVE),   T(us.TILD),  T(us.BACKSLASH),    T(us.PIPE),                T(us.SLASH),  CTL(us.QUES), T(us.QUOT), T(us.DQUO),
                                         LT(L_LEFT, us.SPACE),                _______
     },
     // L_NUM
     .{
-       T(us.HASH),  T(us.DLR),    T(us.PERC),  T(us.CART), T(us.AMPR),                  T(us.MINUS),   T(us.N7),  T(us.N8),  T(us.N9),    T(us.PLUS),
-       T(us.AT),     UNDO,          REDO, T(us.SPACE), T(us.ASTER),                T(us.UNDERLINE), SFT(us.N4),CTL(us.N5),ALT(us.N6), T(us.EQUAL),
-               T(us.ESC), T(_Ctl(us.C)),   T(us.DEL), T(_Ctl(us.V)),              T(de.EUR),   T(us.N1),  T(us.N2),  T(us.N3),
+       T(us.HASH),  T(us.DLR),    T(us.PERC),  T(us.CART), T(us.AMPR),                  T(us.MINUS),   T(us.N7),  CTL(us.N8),  T(us.N9),    T(us.PLUS),
+       CTL(us.AT),     UNDO,          REDO, T(us.SPACE), T(us.ASTER),                T(us.UNDERLINE), SFT(us.N4),GUI(us.N5),ALT(us.N6), CTL(us.EQUAL),
+               T(us.ESC), T(_Gui(us.C)),   T(us.DEL), T(_Gui(us.V)),              T(de.EUR),   T(us.N1),  T(us.N2),  T(us.N3),
                                         LT(L_LEFT, us.SPACE),             LT(L_RIGHT, us.N0)
     },
     // L_EMPTY
@@ -61,8 +61,8 @@ pub const keymap = [_][key_count]core.KeyDef{
     },
     // BOTH
     .{
-    PrintStats,   T(us.F7),   T(us.F8),   T(us.F9), T(us.F10),            T(de.SRPS), T(us.SPACE), T(us.SPACE), T(us.SPACE), T(de.OE),
-    T(us.ESC), ALT(us.F4), CTL(us.F5), SFT(us.F6), T(us.F11),             T(de.AE),  SFT(us.BS),  CTL(us.BS),  ALT(us.BS),   T(us.ESC),
+    PrintStats,   T(us.F7),   CTL(us.F8),   T(us.F9), T(us.F10),            T(de.SRPS), T(us.SPACE), CTL(us.SPACE), T(us.SPACE), T(de.OE),
+    CTL(us.ESC), ALT(us.F4), GUI(us.F5), SFT(us.F6), T(us.F11),             T(de.AE),  SFT(us.BS),  GUI(us.BS),  ALT(us.BS),   CTL(us.ESC),
                T(us.F1),   T(us.F2),   T(us.F3), T(us.F12),            T(us.CART),   T(de.UE),   T(us.DEL),   T(us.DEL),
                                                    _______,              T(us.N0)
     },
@@ -78,8 +78,8 @@ pub const keymap = [_][key_count]core.KeyDef{
 const LEFT_THUMB = 1;
 const RIGHT_THUMB = 2;
 
-const UNDO = T(_Ctl(us.Z));
-const REDO = T(_Ctl(us.Y));
+const UNDO = T(_Gui(us.Z));
+const REDO = T(_Gui(us.Y));
 
 fn _Ctl(fire: core.KeyCodeFire) core.KeyCodeFire {
     var copy = fire;
@@ -87,6 +87,16 @@ fn _Ctl(fire: core.KeyCodeFire) core.KeyCodeFire {
         mods.left_ctrl = true;
     } else {
         copy.tap_modifiers = .{ .left_ctrl = true };
+    }
+    return copy;
+}
+
+fn _Gui(fire: core.KeyCodeFire) core.KeyCodeFire {
+    var copy = fire;
+    if (copy.tap_modifiers) |mods| {
+        mods.left_gui = true;
+    } else {
+        copy.tap_modifiers = .{ .left_gui = true };
     }
     return copy;
 }
