@@ -79,7 +79,7 @@ const LEFT_THUMB = 1;
 const RIGHT_THUMB = 2;
 
 const UNDO = T(_Gui(us.Z));
-const REDO = T(.{.tap_keycode = us.KC_Z, .tap_modifiers = .{ .left_shift = true, .left_gui = true } });
+const REDO = T(.{ .tap_keycode = us.KC_Z, .tap_modifiers = .{ .left_shift = true, .left_gui = true } });
 
 fn _Ctl(fire: core.KeyCodeFire) core.KeyCodeFire {
     var copy = fire;
@@ -97,6 +97,16 @@ fn _Gui(fire: core.KeyCodeFire) core.KeyCodeFire {
         mods.left_gui = true;
     } else {
         copy.tap_modifiers = .{ .left_gui = true };
+    }
+    return copy;
+}
+
+fn _Alt(fire: core.KeyCodeFire) core.KeyCodeFire {
+    var copy = fire;
+    if (copy.tap_modifiers) |mods| {
+        mods.left_alt = true;
+    } else {
+        copy.tap_modifiers = .{ .left_alt = true };
     }
     return copy;
 }
@@ -125,10 +135,11 @@ const PrintStats = core.KeyDef{ .tap_only = .{ .key_press = .{ .tap_keycode = us
 const tapping_term = core.TimeSpan{ .ms = 250 };
 const combo_timeout = core.TimeSpan{ .ms = 40 };
 pub const combos = [_]core.Combo2Def{
-    Combo_Tap(.{ 1, 2 }, L_BASE, us.J),
-    Combo_Tap_HoldMod(.{ 11, 12 }, L_BASE, us.Z, .{ .right_ctrl = true }),
+    Combo_Tap_HoldMod(.{ 20, 21 }, L_BASE, us.Z, .{ .right_ctrl = true }),
+    Combo_Tap(.{ 22, 23 }, L_BASE, _Alt(us.U)),
+    Combo_Tap(.{ 24, 25 }, L_BASE, _Alt(us.U)),
 
-    Combo_Tap_HoldMod(.{ 12, 13 }, L_BASE, us.V, .{ .left_ctrl = true, .left_shift = true }),
+    // Combo_Tap_HoldMod(.{ 12, 13 }, L_BASE, us.V, .{ .left_ctrl = true, .left_shift = true }),
     Combo_Tap_HoldMod(.{ 12, 13 }, L_NUM, _Ctl(us.V), .{ .left_ctrl = true, .left_shift = true }),
     Combo_Tap_HoldMod(.{ 11, 12 }, L_NUM, _Ctl(us.X), .{ .left_ctrl = true, .left_shift = true }),
     Combo_Tap_HoldMod(.{ 12, 13 }, L_ARROWS, us.AMPR, .{ .left_ctrl = true, .left_shift = true }),
@@ -140,7 +151,6 @@ pub const combos = [_]core.Combo2Def{
     Combo_Tap(.{ 5, 4 }, L_BASE, us.BOOT),
     Combo_Tap(.{ 6, 7 }, L_BASE, de.AE),
     Combo_Tap(.{ 6, 8 }, L_BASE, de.OE),
-
     Combo_Tap(.{ 7, 8 }, L_BASE, de.UE),
 
     Combo_Tap(.{ 7, 8 }, L_ARROWS, us.QUES),
