@@ -47,7 +47,7 @@ pub const keymap = [_][key_count]core.KeyDef{
     // L_NUM
     .{
        T(us.HASH),  T(us.DLR),    T(us.PERC),  T(us.CART), T(us.AMPR),                  T(us.MINUS),   T(us.N7),  CTL(us.N8),  T(us.N9),    T(us.PLUS),
-       CTL(us.AT),     UNDO,          REDO, T(us.SPACE), T(us.ASTER),                T(us.UNDERLINE), SFT(us.N4),GUI(us.N5),ALT(us.N6), CTL(us.EQUAL),
+       CTL(us.AT),     UNDO,          REDO, T(us.ENTER), T(us.ASTER),                T(us.UNDERLINE), SFT(us.N4),GUI(us.N5),ALT(us.N6), CTL(us.EQUAL),
                T(us.ESC), T(_Gui(us.C)),   T(us.DEL), T(_Gui(us.V)),              T(de.EUR),   T(us.N1),  T(us.N2),  T(us.N3),
                                         LT(L_LEFT, us.SPACE),             LT(L_RIGHT, us.N0)
     },
@@ -61,9 +61,9 @@ pub const keymap = [_][key_count]core.KeyDef{
     },
     // BOTH
     .{
-    PrintStats,   T(us.F7),   CTL(us.F8),   T(us.F9), T(us.F10),            T(de.SRPS), T(us.SPACE), CTL(us.SPACE), T(us.SPACE), T(de.OE),
-    CTL(us.ESC), ALT(us.F4), GUI(us.F5), SFT(us.F6), T(us.F11),             T(de.AE),  SFT(us.BS),  GUI(us.BS),  ALT(us.BS),   CTL(us.ESC),
-               T(us.F1),   T(us.F2),   T(us.F3), T(us.F12),            T(us.CART),   T(de.UE),   T(us.DEL),   T(us.DEL),
+    _Gui(us.TAB),   T(us.F7),   CTL(us.F8),   T(us.F9), T(us.F10),            T(de.SRPS), T(us.SPACE), CTL(us.SPACE), T(us.SPACE), T(de.OE),
+    _Gui(us.GRAVE), ALT(us.F4), GUI(us.F5), SFT(us.F6), T(us.F11),             T(de.AE),  SFT(us.BS),  GUI(us.BS),  ALT(us.BS),   CTL(us.ESC),
+                      T(us.F1),   T(us.F2),   T(us.F3), T(us.F12),            T(us.CART),   T(de.DEL),   T(us.DEL),   T(us.DEL),
                                                    _______,              T(us.N0)
     },
     .{
@@ -135,6 +135,7 @@ const PrintStats = core.KeyDef{ .tap_only = .{ .key_press = .{ .tap_keycode = us
 const tapping_term = core.TimeSpan{ .ms = 250 };
 const combo_timeout = core.TimeSpan{ .ms = 40 };
 pub const combos = [_]core.Combo2Def{
+    Combo_Tap(.{ 1, 2 }, L_BASE, de.SRPS),
     Combo_Tap_HoldMod(.{ 20, 21 }, L_BASE, us.Z, .{ .right_ctrl = true }),
     Combo_Tap(.{ 22, 23 }, L_BASE, _Alt(us.U)),
     Combo_Tap(.{ 24, 25 }, L_BASE, _Alt(us.U)),
