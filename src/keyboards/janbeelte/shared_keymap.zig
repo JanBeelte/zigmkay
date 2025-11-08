@@ -61,9 +61,9 @@ pub const keymap = [_][key_count]core.KeyDef{
     },
     // BOTH
     .{
-    _Gui(us.TAB),   T(us.F7),   CTL(us.F8),   T(us.F9), T(us.F10),            T(de.SRPS), T(us.SPACE), CTL(us.SPACE), T(us.SPACE), T(de.OE),
-    _Gui(us.GRAVE), ALT(us.F4), GUI(us.F5), SFT(us.F6), T(us.F11),             T(de.AE),  SFT(us.BS),  GUI(us.BS),  ALT(us.BS),   CTL(us.ESC),
-                      T(us.F1),   T(us.F2),   T(us.F3), T(us.F12),            T(us.CART),   T(de.DEL),   T(us.DEL),   T(us.DEL),
+    T(_Gui(us.TAB)),   T(us.F7),   CTL(us.F8),   T(us.F9), T(us.F10),            T(de.SRPS), T(us.SPACE), CTL(us.SPACE), T(us.SPACE), T(de.OE),
+    T(_Gui(us.GRAVE)), ALT(us.F4), GUI(us.F5), SFT(us.F6), T(us.F11),             T(de.AE),  SFT(us.BS),  GUI(us.BS),  ALT(us.BS),   CTL(us.ESC),
+                      T(us.F1),   T(us.F2),   T(us.F3), T(us.F12),            T(us.CART),   T(us.DEL),   T(us.DEL),   T(us.DEL),
                                                    _______,              T(us.N0)
     },
     .{
@@ -160,7 +160,7 @@ pub const combos = [_]core.Combo2Def{
     Combo_Tap(.{ 1, 2 }, L_ARROWS, us.EXLM),
     Combo_Tap(.{ 1, 2 }, L_BOTH, us.EXLM),
 
-    Combo_Tap_HoldMod(.{ 17, 18 }, L_BASE, us.MINS, .{ .left_ctrl = true, .left_alt = true }),
+    // Combo_Tap_HoldMod(.{ 17, 18 }, L_BASE, us.MINS, .{ .left_ctrl = true, .left_alt = true }),
     Combo_Tap(.{ 17, 18 }, L_ARROWS, us.PLUS),
     Combo_Tap(.{ 16, 17 }, L_ARROWS, us.PIPE),
 
